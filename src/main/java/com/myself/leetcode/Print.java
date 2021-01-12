@@ -1,4 +1,4 @@
-package com.myself.leetcode.service;
+package com.myself.leetcode;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.locks.Condition;

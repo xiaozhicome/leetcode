@@ -1,8 +1,4 @@
-package string;
-
-import sun.misc.Unsafe;
-
-import java.lang.reflect.Field;
+package com.myself.leetcode.string;
 
 public class StringTest {
 

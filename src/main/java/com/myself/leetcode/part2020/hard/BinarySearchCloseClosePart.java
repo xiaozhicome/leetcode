@@ -1,7 +1,6 @@
-package com.myself.leetcode.part2020;
+package com.myself.leetcode.part2020.hard;
 
-//TODO
-public class BinarySearchCloseOpenPart {
+public class BinarySearchCloseClosePart {
     public static void main(String[] args) {
         Sulotion sulotion = new Sulotion();
         int[] a = {5, 7, 7, 8, 8, 10};

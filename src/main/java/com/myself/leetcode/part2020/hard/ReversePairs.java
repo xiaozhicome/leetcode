@@ -1,4 +1,4 @@
-package com.myself.leetcode.part2020;
+package com.myself.leetcode.part2020.hard;
 
 public class ReversePairs {
     public static class Sulotion {
@@ -41,7 +41,7 @@ public class ReversePairs {
             int j = middle + 1;
             int t = left;
             int count = 0;
-            //先计数，不然分散比较边界条件太复杂
+            //先计数，不然分散比较边界条件太复杂，但是提交超时，蛋疼
             for (int m = left; m <= middle; ) {
                 int n = middle + 1;
                 while (n <= right && (long) nums[m] > 2 * (long) nums[n]) {

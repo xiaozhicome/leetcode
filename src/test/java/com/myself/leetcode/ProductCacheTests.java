@@ -1,8 +1,8 @@
 package com.myself.leetcode;
 
-import com.myself.leetcode.lfu.fail.ProductCacheListener;
-import com.myself.leetcode.lfu.fail.ProductCacheManagerImpl;
-import com.myself.leetcode.lfu.fail.ProductCacheRefresher;
+import com.myself.leetcode.fail.lfu.ProductCacheListener;
+import com.myself.leetcode.fail.lfu.ProductCacheManagerImpl;
+import com.myself.leetcode.fail.lfu.ProductCacheRefresher;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

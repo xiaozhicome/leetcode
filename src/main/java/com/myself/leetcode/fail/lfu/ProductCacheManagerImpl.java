@@ -1,4 +1,4 @@
-package com.myself.leetcode.lfu.fail;
+package com.myself.leetcode.fail.lfu;
 
 import com.myself.leetcode.map.HashMap;
 

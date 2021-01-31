@@ -1,4 +1,4 @@
-package com.myself.leetcode.lfu.fail;
+package com.myself.leetcode.fail.lfu;
 
 import org.springframework.stereotype.Service;
 

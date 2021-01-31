@@ -1,6 +1,4 @@
-package com.myself.leetcode.lfu.fail;
-
-import org.springframework.stereotype.Component;
+package com.myself.leetcode.fail.lfu;
 
 import java.util.Comparator;
 import java.util.TreeMap;

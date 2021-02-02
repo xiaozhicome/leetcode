@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class SortUtil {
-    private static int N = 10;
+    private static int N = 20;
     private static int LIMIT = 100;
 
     public static int[] getNumbers() {

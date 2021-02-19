@@ -47,7 +47,7 @@ public class FindWords {
             for (int i = 0; i < board.length; i++) {
                 for (int j = 0; j < board[0].length; j++) {
                     StringBuilder builder = new StringBuilder();
-                    addStartValidWord(i, j, board, used, x, y, builder, root, list);
+                    addStartValidWord(i, j, board, used, x, y, builder, root.root, list);
                 }
             }
             list = list.stream().distinct().sorted().collect(Collectors.toList());
@@ -60,8 +60,37 @@ public class FindWords {
                                        boolean[][] used,
                                        int[] x, int[] y,
                                        StringBuilder builder,
-                                       Trie root,
+                                       Node node,
                                        List<String> list) {
+            if (row < 0 || row == board.length || column < 0 || column == board[0].length || used[row][column]) {
+                return;
+            }
+            char c = board[row][column];
+            int lastLength = builder.length();
+            builder.append(c);
+            used[row][column] = true;
+            String s = builder.toString();
+            if (node.get(c) != null) {
+                if (node.get(c).isEnd) {
+                    list.add(s);
+                }
+                for (int i = 0; i < x.length; i++) {
+                    addStartValidWord(row + x[i], column + y[i], board, used, x, y, builder, node.get(c), list);
+                }
+            }
+            builder.deleteCharAt(lastLength);
+            used[row][column] = false;
+            return;
+        }
+
+        private void addStartValidWordBad(int row,
+                                          int column,
+                                          char[][] board,
+                                          boolean[][] used,
+                                          int[] x, int[] y,
+                                          StringBuilder builder,
+                                          Trie root,
+                                          List<String> list) {
             if (row < 0 || row == board.length || column < 0 || column == board[0].length || used[row][column]) {
                 return;
             }
@@ -75,7 +104,7 @@ public class FindWords {
                     //当前字符串匹配，继续向后
                     list.add(s);
                     for (int i = 0; i < x.length; i++) {
-                        addStartValidWord(row + x[i], column + y[i], board, used, x, y, builder, root, list);
+                        addStartValidWordBad(row + x[i], column + y[i], board, used, x, y, builder, root, list);
                     }
                     builder.deleteCharAt(lastLength);
                     used[row][column] = false;
@@ -85,7 +114,7 @@ public class FindWords {
 //                    used[row][column] = false;
                     //当前字符串不匹配，继续向后
                     for (int i = 0; i < x.length; i++) {
-                        addStartValidWord(row + x[i], column + y[i], board, used, x, y, builder, root, list);
+                        addStartValidWordBad(row + x[i], column + y[i], board, used, x, y, builder, root, list);
                     }
                     builder.deleteCharAt(lastLength);//TODO 回溯，总是忘记
                     used[row][column] = false;
